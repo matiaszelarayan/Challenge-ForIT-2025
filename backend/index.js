@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+=======
+/**
+ * index.js - API REST de tareas con Express
+ *
+ * Endpoints:
+ *   - GET    /api/tasks        -> Listar todas las tareas
+ *   - POST   /api/tasks        -> Crear una nueva tarea
+ *   - PUT    /api/tasks/:id    -> Actualizar una tarea existente
+ *   - DELETE /api/tasks/:id    -> Eliminar una tarea
+ *
+ * Estructura de datos:
+ *   {
+ *     id: string,
+ *     title: string,
+ *     description: string,
+ *     compled: boolean,
+ *     createdAt: string (ISO)
+ *   }
+ *
+ * Almacenamiento en memoria. Incluye manejo de errores y CORS.
+ */
+
+>>>>>>> 6efafd9 (app To Do List)
 // Servidor básico de tareas con Express
 const express = require('express');
 const cors = require('cors');
@@ -49,7 +73,11 @@ app.put('/api/tasks/:id', (req, res) => {
 
 // Eliminar una tarea
 app.delete('/api/tasks/:id', (req, res) => {
+<<<<<<< HEAD
   const id = parseInt(req.params.id);
+=======
+  const id = req.params.id;
+>>>>>>> 6efafd9 (app To Do List)
   const index = tasks.findIndex(t => t.id === id);
   if (index === -1) {
     return res.status(404).json({ error: 'Tarea no encontrada' });
