@@ -1,12 +1,14 @@
+/**
+ * App: Componente principal de la aplicación.
+ * Maneja el estado global de tareas y la lógica de CRUD.
+ * Utiliza hooks useState y useEffect para el manejo de estado y efectos.
+ * Renderiza el formulario y la lista de tareas.
+ */
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import TaskList from './TaskList';
 import TaskForm from './TaskForm';
-<<<<<<< HEAD
-import './App.css';
-=======
 import './index.css';
->>>>>>> 6efafd9 (app To Do List)
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -19,16 +21,6 @@ const API_URL = import.meta.env.VITE_API_URL;
  * @property {string} createdAt - Fecha de creación (ISO string)
  */
 
-<<<<<<< HEAD
-=======
-/**
- * App: Componente principal de la aplicación.
- * Maneja el estado global de tareas y la lógica de CRUD.
- * Utiliza hooks useState y useEffect para el manejo de estado y efectos.
- * Renderiza el formulario y la lista de tareas.
- */
-
->>>>>>> 6efafd9 (app To Do List)
 function App() {
   const [tasks, setTasks] = useState([]);
   const [taskToEdit, setTaskToEdit] = useState(null);
@@ -76,8 +68,6 @@ function App() {
       .then(() => setTasks(tasks.filter(t => t.id !== id)));
   };
 
-<<<<<<< HEAD
-=======
   // Cambiar estado de completado
   const handleToggle = (task) => {
     fetch(`${API_URL}/api/tasks/${task.id}`, {
@@ -89,7 +79,6 @@ function App() {
       .then(updated => setTasks(tasks.map(t => t.id === updated.id ? updated : t)));
   };
 
->>>>>>> 6efafd9 (app To Do List)
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>{error}</p>;
 
@@ -100,11 +89,7 @@ function App() {
         <Route path="/" element={
           <>
             <TaskForm onSave={handleSave} taskToEdit={taskToEdit} onCancel={() => setTaskToEdit(null)} />
-<<<<<<< HEAD
-            <TaskList tasks={tasks} onEdit={setTaskToEdit} onDelete={handleDelete} />
-=======
             <TaskList tasks={tasks} onEdit={setTaskToEdit} onDelete={handleDelete} onToggle={handleToggle} />
->>>>>>> 6efafd9 (app To Do List)
           </>
         } />
       </Routes>

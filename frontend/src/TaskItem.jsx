@@ -1,15 +1,3 @@
-import React from 'react';
-
-<<<<<<< HEAD
-function TaskItem({ task, onEdit, onDelete }) {
-  return (
-    <div className="task-item">
-      <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
-        {task.title}
-      </span>
-      <button onClick={() => onEdit(task)}>Editar</button>
-      <button onClick={() => onDelete(task.id)}>Eliminar</button>
-=======
 /**
  * TaskItem: Componente visual para mostrar una tarea.
  * Props:
@@ -19,6 +7,7 @@ function TaskItem({ task, onEdit, onDelete }) {
  *   - onToggle: función para marcar como completada/incompleta
  * Visualiza título y descripción, y botones de acción.
  */
+import React from 'react';
 
 function TaskItem({ task, onEdit, onDelete, onToggle }) {
   return (
@@ -69,7 +58,6 @@ function TaskItem({ task, onEdit, onDelete, onToggle }) {
           Eliminar
         </button>
       </div>
->>>>>>> 6efafd9 (app To Do List)
     </div>
   );
 }

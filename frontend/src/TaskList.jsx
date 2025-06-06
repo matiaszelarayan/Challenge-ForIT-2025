@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import TaskItem from './TaskItem';
-
-function TaskList({ tasks, onEdit, onDelete }) {
-  if (tasks.length === 0) return <p>No hay tareas.</p>;
-  return (
-    <div>
-      {tasks.map(task => (
-        <TaskItem key={task.id} task={task} onEdit={onEdit} onDelete={onDelete} />
-      ))}
-=======
-import React, { useState } from 'react';
-import TaskItem from './TaskItem';
-
 /**
  * TaskList: Lista de tareas con filtros.
  * Props:
@@ -22,6 +7,8 @@ import TaskItem from './TaskItem';
  *   - onToggle: función para marcar como completada/incompleta
  * Usa useState para el filtro local.
  */
+import React, { useState } from 'react';
+import TaskItem from './TaskItem';
 
 function TaskList({ tasks, onEdit, onDelete, onToggle }) {
   const [filter, setFilter] = useState('all');
@@ -46,7 +33,6 @@ function TaskList({ tasks, onEdit, onDelete, onToggle }) {
           <TaskItem key={task.id} task={task} onEdit={onEdit} onDelete={onDelete} onToggle={onToggle} />
         ))
       )}
->>>>>>> 6efafd9 (app To Do List)
     </div>
   );
 }

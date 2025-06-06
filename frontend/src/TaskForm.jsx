@@ -1,10 +1,3 @@
-import React, { useState, useEffect } from 'react';
-
-<<<<<<< HEAD
-function TaskForm({ onSave, taskToEdit, onCancel }) {
-  const [title, setTitle] = useState('');
-  const [completed, setCompleted] = useState(false);
-=======
 /**
  * TaskForm: Formulario para crear o editar tareas.
  * Props:
@@ -13,41 +6,25 @@ function TaskForm({ onSave, taskToEdit, onCancel }) {
  *   - onCancel: función para cancelar la edición
  * Maneja el estado local del título y descripción usando useState y useEffect.
  */
+import React, { useState, useEffect } from 'react';
 
 function TaskForm({ onSave, taskToEdit, onCancel }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
->>>>>>> 6efafd9 (app To Do List)
 
   useEffect(() => {
     if (taskToEdit) {
       setTitle(taskToEdit.title);
-<<<<<<< HEAD
-      setCompleted(taskToEdit.completed);
-    } else {
-      setTitle('');
-      setCompleted(false);
-=======
       setDescription(taskToEdit.description || '');
     } else {
       setTitle('');
       setDescription('');
->>>>>>> 6efafd9 (app To Do List)
     }
   }, [taskToEdit]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!title.trim()) return;
-<<<<<<< HEAD
-    onSave({ ...taskToEdit, title, completed });
-    setTitle('');
-    setCompleted(false);
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-=======
     onSave({ ...taskToEdit, title, description });
     setTitle('');
     setDescription('');
@@ -68,26 +45,12 @@ function TaskForm({ onSave, taskToEdit, onCancel }) {
       gap: '0.7em',
       alignItems: 'stretch',
     }}>
->>>>>>> 6efafd9 (app To Do List)
       <input
         type="text"
         placeholder="Título de la tarea"
         value={title}
         onChange={e => setTitle(e.target.value)}
         required
-<<<<<<< HEAD
-      />
-      <label>
-        <input
-          type="checkbox"
-          checked={completed}
-          onChange={e => setCompleted(e.target.checked)}
-        />
-        Completada
-      </label>
-      <button type="submit">{taskToEdit ? 'Actualizar' : 'Agregar'}</button>
-      {taskToEdit && <button type="button" onClick={onCancel}>Cancelar</button>}
-=======
         aria-label="Título de la tarea"
         maxLength={60}
         style={{ fontWeight: 600, fontSize: '1.08em', background: 'var(--bg)', color: 'var(--text)', border: '2px solid var(--primary)', borderRadius: 8, padding: '0.7em 1em' }}
@@ -111,7 +74,6 @@ function TaskForm({ onSave, taskToEdit, onCancel }) {
           </button>
         )}
       </div>
->>>>>>> 6efafd9 (app To Do List)
     </form>
   );
 }

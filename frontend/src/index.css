@@ -31,23 +31,13 @@ a:hover {
 }
 
 body {
-<<<<<<< HEAD
-  background: var(--bg);
-  color: var(--text);
-  margin: 0;
-  display: flex;
-  place-items: center;
-=======
   background: linear-gradient(135deg, #18181b 0%, #7c3aed 100%);
   color: var(--text);
   margin: 0;
->>>>>>> 6efafd9 (app To Do List)
   min-width: 320px;
   min-height: 100vh;
   font-size: 18px;
   letter-spacing: 0.01em;
-<<<<<<< HEAD
-=======
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +51,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
->>>>>>> 6efafd9 (app To Do List)
 }
 
 h1, h2, h3 {
@@ -86,14 +75,7 @@ input, textarea, button {
   margin: 0.3em 0;
 }
 
-input[type="text"], textarea {
-<<<<<<< HEAD
-  background: var(--surface);
-  color: var(--text);
-  border: 1.5px solid var(--primary);
-  width: 100%;
-  box-sizing: border-box;
-=======
+input[type="text"] {
   font-size: 1.1em;
   font-weight: 600;
   background: #18181b;
@@ -109,18 +91,13 @@ textarea {
   border: 1.5px solid #7c3aed;
   color: #f4f4f5;
   resize: vertical;
->>>>>>> 6efafd9 (app To Do List)
+  margin-bottom: 0.7em;
 }
 
 button {
   background: var(--primary);
   color: #fff;
   font-weight: 600;
-<<<<<<< HEAD
-  margin-right: 0.5em;
-  transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px #0002;
-=======
   font-size: 0.95em;
   margin-right: 0.3em;
   padding: 0.4em 1em;
@@ -130,32 +107,10 @@ button {
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   outline: none;
->>>>>>> 6efafd9 (app To Do List)
 }
 button:hover, button:focus {
   background: var(--accent);
   color: #18181b;
-<<<<<<< HEAD
-}
-
-.task-item {
-  background: var(--surface);
-  margin: 0.5em 0;
-  padding: 1em;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 1px 4px #0001;
-}
-.task-item span {
-  flex: 1;
-  font-size: 1.1em;
-  word-break: break-word;
-}
-.task-item button {
-  margin-left: 0.5em;
-=======
   box-shadow: 0 0 0 2px var(--primary);
 }
 button[aria-pressed="true"] {
@@ -195,7 +150,6 @@ button[aria-label*="completada"] {
 }
 .task-item button {
   margin-left: 0.1em;
->>>>>>> 6efafd9 (app To Do List)
 }
 
 form {
@@ -204,15 +158,11 @@ form {
   border-radius: 12px;
   margin-bottom: 2em;
   box-shadow: 0 2px 8px #0002;
-<<<<<<< HEAD
-}
-=======
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
 
->>>>>>> 6efafd9 (app To Do List)
 label {
   display: flex;
   align-items: center;
@@ -230,20 +180,6 @@ label {
     font-size: 16px;
   }
   form, .task-item {
-<<<<<<< HEAD
-    padding: 1em;
-  }
-}
-
-/* Accesibilidad */
-:focus {
-  outline: 3px solid var(--accent);
-  outline-offset: 2px;
-}
-
-button:active {
-  box-shadow: 0 0 0 2px var(--primary);
-=======
     padding: 1em !important;
     max-width: 98vw !important;
     min-width: 0;
@@ -259,7 +195,6 @@ form, .task-item {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
->>>>>>> 6efafd9 (app To Do List)
 }
 
 @media (prefers-color-scheme: light) {

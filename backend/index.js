@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /**
  * index.js - API REST de tareas con Express
  *
@@ -15,13 +13,12 @@
  *     title: string,
  *     description: string,
  *     compled: boolean,
- *     createdAt: string (ISO)
+ *     createdAt: Date
  *   }
  *
  * Almacenamiento en memoria. Incluye manejo de errores y CORS.
  */
 
->>>>>>> 6efafd9 (app To Do List)
 // Servidor básico de tareas con Express
 const express = require('express');
 const cors = require('cors');
@@ -73,11 +70,7 @@ app.put('/api/tasks/:id', (req, res) => {
 
 // Eliminar una tarea
 app.delete('/api/tasks/:id', (req, res) => {
-<<<<<<< HEAD
-  const id = parseInt(req.params.id);
-=======
   const id = req.params.id;
->>>>>>> 6efafd9 (app To Do List)
   const index = tasks.findIndex(t => t.id === id);
   if (index === -1) {
     return res.status(404).json({ error: 'Tarea no encontrada' });
