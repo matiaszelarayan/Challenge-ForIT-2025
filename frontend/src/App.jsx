@@ -79,6 +79,13 @@ function App() {
       .then(updated => setTasks(tasks.map(t => t.id === updated.id ? updated : t)));
   };
 
+  // Eliminar todas las tareas completadas
+  const handleDeleteCompleted = () => {
+    fetch(`${API_URL}/api/tasks/completed`, { method: 'DELETE' })
+      .then(res => res.json())
+      .then(() => setTasks(tasks.filter(t => !t.compled)));
+  };
+
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>{error}</p>;
 
@@ -89,7 +96,7 @@ function App() {
         <Route path="/" element={
           <>
             <TaskForm onSave={handleSave} taskToEdit={taskToEdit} onCancel={() => setTaskToEdit(null)} />
-            <TaskList tasks={tasks} onEdit={setTaskToEdit} onDelete={handleDelete} onToggle={handleToggle} />
+            <TaskList tasks={tasks} onEdit={setTaskToEdit} onDelete={handleDelete} onToggle={handleToggle} onDeleteCompleted={handleDeleteCompleted} />
           </>
         } />
       </Routes>

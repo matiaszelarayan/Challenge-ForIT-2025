@@ -79,6 +79,14 @@ app.delete('/api/tasks/:id', (req, res) => {
   res.status(204).send();
 });
 
+// Eliminar todas las tareas completadas
+app.delete('/api/tasks/completed', (req, res) => {
+  const before = tasks.length;
+  tasks = tasks.filter(t => !t.compled);
+  const deleted = before - tasks.length;
+  res.json({ deleted });
+});
+
 // Manejo básico de errores
 app.use((err, req, res, next) => {
   console.error(err.stack);
